@@ -36,6 +36,12 @@ def getSeaHeight(time):
 		return "Err. no data available"
 
 
-seaHeight, sampleDateTime = getSeaHeight(datetime.datetime.now())
-print(seaHeight)
-print(sampleDateTime)
+while (True):
+    try:
+        seaHeight, sampleDateTime = getSeaHeight(datetime.datetime.now())
+        print(seaHeight)
+        print(sampleDateTime)
+    except: 
+        print("Err. Exception unpacking message @ ", datetime.datetime.now(), sys.exc_info()[0])
+        #raise
+    time.sleep(900)
